@@ -1,0 +1,60 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>spamton experience</title>
+    <script src="phaser.js"></script>
+    <script src="scenes/title.js"></script>
+    <script src="scenes/main.js"></script>
+    <script src="scenes/over.js"></script>
+
+    <style>
+        body {
+            margin-top: 1px;
+            padding: 0;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="game"></div>
+
+    <script type="text/javascript">
+        /*Global variables definition*/
+        const config = {
+            type: Phaser.AUTO,
+            scale: {
+                mode: Phaser.Scale.FIT
+            },
+            autoCenter: Phaser.Scale.CENTER,
+            width: 640, //largura da tela do jogo
+            height: 480, //altura da tela do jogo
+            backgroundColor: '#000000',
+            pixelArt: true,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 1500},
+                    debug: false,
+                }
+            },
+            parent: "game",
+            dom:{
+               createContainer: true,
+            },
+            // cenas de title screen, jogo principal e game over
+            scene: [Title, Main, Over]
+        };
+        
+        var game = new Phaser.Game(config);
+        game.scene.start('Title');
+    </script>
+
+</body>
+</html>

@@ -14,6 +14,7 @@ class Title extends Phaser.Scene {
     {
         // carregar imagem de titulo e musica
         this.titleMusic = this.sound.add('titleMusic')
+        this.titleMusic.loop = true;
         this.titleMusic.play();
         this.add.image(320, 240, 'titlescreen')
         // quando clicada, iniciar jogo principal
